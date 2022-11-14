@@ -25,14 +25,11 @@ function getNLUInstance() {
     const NaturalLanguageUnderstandingV1 = require('ibm-watson/natural-language-understanding/v1');
     const { IamAuthenticator } = require('ibm-watson/auth');
     const naturalLanguageUnderstanding = new NaturalLanguageUnderstandingV1({
-        version: '{version}',
+        version: '2021-08-01',
         authenticator: new IamAuthenticator({
             apikey: api_key,
             }),
         serviceUrl: api_url,
-        headers: {
-            'X-Watson-Learning-Opt-Out': 'true'
-            }
 });
 return naturalLanguageUnderstanding;
 }
